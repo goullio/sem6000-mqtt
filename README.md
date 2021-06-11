@@ -27,6 +27,8 @@ You need a `sem6.properties` file where you can configure multiple SEM6000 devic
 ```
 rootTopic=home/mysemdevices       # the mqtt root topic
 mqttServer=tcp://192.168.0.1      # IP or hostname of your mqtt broker
+mqttUser=                         # username for login on your mqtt broker
+mqttPassword=                     # password for login on your mqtt broker
 
 sem1.mac=00:00:00:00:00:01        # the mac of your sem6000 device
 sem1.pin=0000                     # the PIN of your sem6000 device
