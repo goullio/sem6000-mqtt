@@ -24,6 +24,9 @@ public class ParseNotificationTest {
 		MeasurementResponse mRes = (MeasurementResponse) semResponse;
 		assertEquals(234, mRes.getVoltage());
 		assertEquals(11.464, mRes.getPower(), 0.001f);
+		assertEquals(0.089, mRes.getCurrent(), 0.001f);
+		assertEquals(50, mRes.getFrequency());
+		assertEquals(0.550, mRes.getPowerFactor(), 0.001f);
 
 	}
 
@@ -66,8 +69,8 @@ public class ParseNotificationTest {
 		SemResponse semResponse = SemResponseParser.parseMessage(Command.hexStringToByteArray(resp), "dummy");
 		assertEquals(ResponseType.dataday, semResponse.getType());
 		DataDayResponse dataResp = (DataDayResponse) semResponse;
-		//assertEquals(47, dataResp.getLast24h());
-		//assertEquals(20, dataResp.getToday());
+		assertEquals(47, dataResp.getLast24h());
+		assertEquals(20, dataResp.getToday());
 	}
 
 }
