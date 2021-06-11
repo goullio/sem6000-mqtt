@@ -36,6 +36,9 @@ class MqttPublisher implements NotificationConsumer {
 			publish(topic + "/" + mr.getId() + "/voltage", mr.getVoltage());
 			publish(topic + "/" + mr.getId() + "/power", mr.getPower());
 			publish(topic + "/" + mr.getId() + "/relay", mr.isPowerOn());
+			publish(topic + "/" + mr.getId() + "/current", mr.getCurrent());
+			publish(topic + "/" + mr.getId() + "/powerfactor", mr.getPowerFactor());
+			publish(topic + "/" + mr.getId() + "/frequency", mr.getFrequency());
 			break;
 		}
 		case dataday: {
